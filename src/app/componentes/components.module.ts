@@ -5,6 +5,7 @@ import { AngularMaterialModule } from '../angular-material/angular-material.modu
 
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { FilterComponent } from './filter/filter.component';
+import { UsersListComponent } from './users-list/users-list.component';
 
 /**
  * Referência do material:
@@ -12,8 +13,8 @@ import { FilterComponent } from './filter/filter.component';
  **/
 
 @NgModule({
-  declarations: [UserDetailsComponent, FilterComponent],
+  declarations: [UserDetailsComponent, FilterComponent, UsersListComponent],
   imports: [FormsModule, AngularMaterialModule],
-  exports: [UserDetailsComponent, FilterComponent],
+  exports: [UserDetailsComponent, FilterComponent, UsersListComponent],
 })
 export class ComponentsModule {}
