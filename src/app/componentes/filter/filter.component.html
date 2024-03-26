@@ -22,5 +22,16 @@
         <mat-date-range-picker #picker></mat-date-range-picker>
       </mat-form-field>
     </div>
+
+    <div class="form__status">
+      <mat-form-field>
+        <mat-label>Status</mat-label>
+        <mat-select>
+          @for (op of status; track op) {
+          <mat-option [value]="op.value">{{ op.viewValue }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
   </form>
 </div>
