@@ -8,10 +8,8 @@ import { UserDetailsComponent } from './user-details/user-details.component';
  **/
 
 @NgModule({
-  declarations: [
-    UserDetailsComponent
-  ],
+  declarations: [UserDetailsComponent],
   imports: [AngularMaterialModule],
-  exports: [],
+  exports: [UserDetailsComponent],
 })
 export class ComponentsModule {}
