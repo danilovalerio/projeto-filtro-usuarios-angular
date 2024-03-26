@@ -10,6 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap; //para possibilita que os itens de filtro se adaptem ao diminuir a tela
 
   //class input name
   &__name {
