@@ -38,4 +38,12 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class UsersListComponent {
   displayedColumns: string[] = ['Nome', 'Data de Registro', 'Status'];
   dataSource = ELEMENT_NEW_DATA;
+
+  onUserSelected(user: IUser) {
+    console.log(
+      `Clicou no item da tabela: ' + '${
+        user.nome + ' ' + user.dataCadastro + ' ' + user.ativo
+      }'`
+    );
+  }
 }
