@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
+import { StatusClassPipe } from './status-class.pipe';
 
 @NgModule({
-  declarations: [],
-  exports: [],
+  declarations: [StatusClassPipe],
+  exports: [StatusClassPipe],
 })
-export class PipesMpdulo {}
+export class PipesModulo {}

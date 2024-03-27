@@ -1,4 +1,3 @@
-import { StatusClassPipe } from './../pipes/status-class.pipe';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -7,6 +6,7 @@ import { AngularMaterialModule } from '../angular-material/angular-material.modu
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { FilterComponent } from './filter/filter.component';
 import { UsersListComponent } from './users-list/users-list.component';
+import { PipesModulo } from '../pipes/pipes.module';
 
 /**
  * Referência do material:
@@ -14,18 +14,13 @@ import { UsersListComponent } from './users-list/users-list.component';
  **/
 
 @NgModule({
-  declarations: [
-    UserDetailsComponent,
-    FilterComponent,
-    UsersListComponent,
-    StatusClassPipe,
-  ],
-  imports: [FormsModule, AngularMaterialModule],
+  declarations: [UserDetailsComponent, FilterComponent, UsersListComponent],
+  imports: [FormsModule, AngularMaterialModule, PipesModulo],
   exports: [
     UserDetailsComponent,
     FilterComponent,
     UsersListComponent,
-    StatusClassPipe,
+    PipesModulo,
   ],
 })
 export class ComponentsModule {}
