@@ -37,7 +37,7 @@ export const UsersList: IUser[] = [
       pais: 'Brasil',
     },
     telefone: '11953601234',
-    ativo: true,
+    ativo: false,
     funcao: 'Desenvolvedor',
     dataCadastro: '2023-08-01T09:00:00.000Z',
     status: {
@@ -106,7 +106,7 @@ export const UsersList: IUser[] = [
       pais: 'Brasil',
     },
     telefone: '11953601234',
-    ativo: true,
+    ativo: false,
     funcao: 'Desenvolvedor',
     dataCadastro: '2023-08-01T09:00:00.000Z',
     status: {
@@ -129,7 +129,7 @@ export const UsersList: IUser[] = [
       pais: 'Brasil',
     },
     telefone: '11953601234',
-    ativo: true,
+    ativo: false,
     funcao: 'Desenvolvedor',
     dataCadastro: '2023-08-01T09:00:00.000Z',
     status: {

@@ -1,3 +1,4 @@
+import { StatusClassPipe } from './../pipes/status-class.pipe';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -13,8 +14,18 @@ import { UsersListComponent } from './users-list/users-list.component';
  **/
 
 @NgModule({
-  declarations: [UserDetailsComponent, FilterComponent, UsersListComponent],
+  declarations: [
+    UserDetailsComponent,
+    FilterComponent,
+    UsersListComponent,
+    StatusClassPipe,
+  ],
   imports: [FormsModule, AngularMaterialModule],
-  exports: [UserDetailsComponent, FilterComponent, UsersListComponent],
+  exports: [
+    UserDetailsComponent,
+    FilterComponent,
+    UsersListComponent,
+    StatusClassPipe,
+  ],
 })
 export class ComponentsModule {}
