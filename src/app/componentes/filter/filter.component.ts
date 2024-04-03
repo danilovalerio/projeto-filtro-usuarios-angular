@@ -16,7 +16,7 @@ export class FilterComponent {
     name: undefined,
     startDate: undefined,
     endtDate: undefined,
-    status: '',
+    status: undefined,
   };
 
   dataSelecionada(date: Date) {
@@ -29,4 +29,8 @@ export class FilterComponent {
     { value: true, viewValue: 'Ativo' },
     { value: false, viewValue: 'Inativo' },
   ];
+
+  onFilter() {
+    console.log(`Filtro clicado! ${JSON.stringify(this.filterOptions)}`);
+  }
 }

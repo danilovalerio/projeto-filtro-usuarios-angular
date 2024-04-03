@@ -5,5 +5,5 @@ export interface IFilterOptions {
   name: string | undefined;
   startDate: Date | undefined;
   endtDate: Date | undefined;
-  status: any;
+  status: boolean | undefined;
 }
