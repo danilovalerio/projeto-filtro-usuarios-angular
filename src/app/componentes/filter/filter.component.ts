@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IFilterOptions } from '../../interfaces/filter-options.interface';
 
 interface Status {
   value: boolean;
@@ -11,7 +12,7 @@ interface Status {
   styleUrl: './filter.component.scss',
 })
 export class FilterComponent {
-  filterOptions = {
+  filterOptions: IFilterOptions = {
     name: '',
     startDate: '',
     endtDate: '',
