@@ -36,7 +36,9 @@
     <mat-divider></mat-divider>
     <mat-list-item>
       <span class="mat-h2">Data de cadastro: </span>
-      <span class="mat-h3">{{ user.dataCadastro | date : "dd/MM/yyyy" }}</span>
+      <span class="mat-h3">{{
+        user.dataCadastro | date : "dd/MM/yyyy" | dashIfEmpty
+      }}</span>
     </mat-list-item>
     <mat-divider></mat-divider>
   </mat-list>
