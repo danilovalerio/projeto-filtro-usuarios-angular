@@ -11,6 +11,9 @@
   </div>
   <div class="right-div">
     <!-- Conteúdo da direita -->
-    <app-user-details [user]="userSelected"></app-user-details>
+    <app-user-details
+      [user]="userSelected"
+      *ngIf="showUserDetails"
+    ></app-user-details>
   </div>
 </div>
