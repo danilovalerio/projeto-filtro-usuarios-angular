@@ -13,13 +13,13 @@ interface Status {
 })
 export class FilterComponent {
   filterOptions: IFilterOptions = {
-    name: '',
-    startDate: '',
-    endtDate: '',
+    name: undefined,
+    startDate: undefined,
+    endtDate: undefined,
     status: '',
   };
 
-  dataSelecionada(date: any) {
+  dataSelecionada(date: Date) {
     console.log(date);
     console.log(date instanceof Date);
     console.log(date.getMonth());
