@@ -19,6 +19,10 @@ export class FilterComponent {
     status: '',
   };
 
+  dataSelecionada(date: any) {
+    console.log(date);
+  }
+
   status: Status[] = [
     { value: true, viewValue: 'Ativo' },
     { value: false, viewValue: 'Inativo' },
