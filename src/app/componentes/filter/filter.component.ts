@@ -21,6 +21,8 @@ export class FilterComponent {
 
   dataSelecionada(date: any) {
     console.log(date);
+    console.log(date instanceof Date);
+    console.log(date.getMonth());
   }
 
   status: Status[] = [
