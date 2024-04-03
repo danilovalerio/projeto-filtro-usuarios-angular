@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
       //this.showUserDetails = true;
       //console.log('Após 3 segundos');
       this.usersList = UsersList;
-    }, 3000);
+    }, 1000);
   }
 
   onUserSelected(user: IUser) {

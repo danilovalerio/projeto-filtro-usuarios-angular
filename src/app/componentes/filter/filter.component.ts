@@ -11,6 +11,13 @@ interface Status {
   styleUrl: './filter.component.scss',
 })
 export class FilterComponent {
+  filterOptions = {
+    name: '',
+    startDate: '',
+    endtDate: '',
+    status: '',
+  };
+
   status: Status[] = [
     { value: true, viewValue: 'Ativo' },
     { value: false, viewValue: 'Inativo' },
