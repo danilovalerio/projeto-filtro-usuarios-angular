@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { IUser } from '../../interfaces/user/user.interface';
 import { UsersList } from '../../data/users-list';
 
@@ -19,11 +19,19 @@ export class UsersListComponent {
   displayedColumns: string[] = ['Nome', 'Data de Registro', 'Status'];
   dataSource = ELEMENT_NEW_DATA;
 
-  onUserSelected(user: IUser) {
+  @Output('userSelected')
+  onUserSelectedEmitt = new EventEmitter<IUser>();
+
+  onUserSelected(userEmitted: IUser) {
     console.log(
       `Clicou no item da tabela: ' + '${
-        user.nome + ' ' + user.dataCadastro + ' ' + user.ativo
+        userEmitted.nome +
+        ' ' +
+        userEmitted.dataCadastro +
+        ' ' +
+        userEmitted.ativo
       }'`
     );
+    this.onUserSelectedEmitt.emit(userEmitted);
   }
 }

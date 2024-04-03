@@ -25,8 +25,8 @@ export const UsersList: IUser[] = [
     },
   },
   {
-    nome: 'Joao da Silva',
-    email: 'joao.silva@exemplo.com',
+    nome: 'Joao Maria da Silva',
+    email: 'joao.maria.silva@exemplo.com',
     senha: 'senha123',
     idade: 30,
     endereco: {
