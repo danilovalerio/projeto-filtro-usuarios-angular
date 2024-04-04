@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { IFilterOptions } from '../../interfaces/filter-options.interface';
 
 interface Status {
@@ -30,7 +30,10 @@ export class FilterComponent {
     { value: false, viewValue: 'Inativo' },
   ];
 
+  @Output('onFilter') onFilterEmitt = new EventEmitter<IFilterOptions>();
+
   onFilter() {
     console.log(`Filtro clicado! ${JSON.stringify(this.filterOptions)}`);
+    this.onFilterEmitt.emit(this.filterOptions);
   }
 }
