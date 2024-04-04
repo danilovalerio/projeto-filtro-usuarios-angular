@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IUser } from './interfaces/user/user.interface';
 import { UsersList } from './data/users-list';
 import { IFilterOptions } from './interfaces/filter-options.interface';
+import { addDays, isWithinInterval } from 'date-fns';
 
 @Component({
   selector: 'app-root',
@@ -54,6 +55,12 @@ export class AppComponent implements OnInit {
       filteredList
     );
 
+    filteredList = this.filterUsersListByDateInterval(
+      filterOptions.startDate,
+      filterOptions.endtDate,
+      filteredList
+    );
+
     return filteredList;
   }
 
@@ -84,5 +91,36 @@ export class AppComponent implements OnInit {
     const filteredList = usersList.filter((user) => user.ativo === status);
 
     return filteredList;
+  }
+
+  /**
+   * Lib DATE-FNS Document
+   * https://date-fns.org/v3.6.0/doc
+   *
+   * @param startDate
+   * @param endtDate
+   * @param usersList
+   * @returns
+   */
+  filterUsersListByDateInterval(
+    startDate: Date | undefined,
+    endtDate: Date | undefined,
+    usersList: IUser[]
+  ): IUser[] {
+    const DATE_INTERVAL_NOT_SELECTED =
+      startDate === undefined || endtDate === undefined;
+
+    if (DATE_INTERVAL_NOT_SELECTED) {
+      return usersList;
+    }
+
+    const listFiltered = usersList.filter((user) =>
+      isWithinInterval(new Date(user.dataCadastro), {
+        start: startDate,
+        end: addDays(endtDate, 1), //add 1 day
+      })
+    );
+
+    return listFiltered;
   }
 }
