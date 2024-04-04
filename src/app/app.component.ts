@@ -31,5 +31,39 @@ export class AppComponent implements OnInit {
 
   onFilter(filterOptions: IFilterOptions) {
     console.log(`onFilter AppComponent ${JSON.stringify(filterOptions)}`);
+
+    this.usersListFiltered = this.filterUsersList(
+      filterOptions,
+      this.usersList
+    );
+  }
+
+  /**
+   * Função pura no conceito de programção funcional
+   * Não altera propriedades externas como acontece numa função impura
+   *
+   * @param filterOptions
+   * @param usersList
+   */
+  filterUsersList(filterOptions: IFilterOptions, usersList: IUser[]): IUser[] {
+    let filteredList: IUser[] = [];
+
+    filteredList = this.filterUsersListByName(filterOptions.name, usersList);
+
+    return filteredList;
+  }
+
+  filterUsersListByName(name: string | undefined, usersList: IUser[]): IUser[] {
+    const NAME_NOT_TYPPED = name == undefined;
+
+    if (NAME_NOT_TYPPED) {
+      return usersList;
+    }
+
+    const filteredList = usersList.filter((user) =>
+      user.nome.toLowerCase().includes(name.toLowerCase())
+    );
+
+    return filteredList;
   }
 }
